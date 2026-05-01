@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
-const PHONE_PRIMARY = "+7 (999) 123-45-67";
-const PHONE_SECONDARY = "+7 (999) 765-43-21";
+const PHONE_PRIMARY = "+7 (959) 264-34-08";
+const PHONE_SECONDARY = "+7 (959) 173-97-98";
 const TELEGRAM_LINK = "https://t.me/username";
 const MAX_LINK = "https://max.ru/username";
 const ADDRESS = "г. Луганск";
