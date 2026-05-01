@@ -89,19 +89,14 @@ export default function Index() {
       </header>
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-blue to-brand-sky" />
 
-        <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-brand-sky/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "1.5s" }} />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-white/8 rounded-full blur-2xl animate-float" style={{ animationDelay: "0.8s" }} />
+        {/* Orbs */}
+        <div className="absolute top-1/4 left-1/3 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-brand-sky/15 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "1.5s" }} />
 
-        <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
-          <svg viewBox="0 0 1440 96" className="absolute bottom-0 w-full" preserveAspectRatio="none">
-            <path d="M0,96 L0,40 Q360,0 720,48 Q1080,96 1440,32 L1440,96 Z" fill="white" />
-          </svg>
-        </div>
-
+        {/* Grid overlay */}
         <div
           className="absolute inset-0 opacity-5"
           style={{
@@ -110,47 +105,97 @@ export default function Index() {
           }}
         />
 
-        <div className={`relative z-10 text-center px-4 sm:px-8 max-w-5xl mx-auto transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full px-4 py-1.5 mb-8 text-white/90 text-sm font-medium">
-            <span className="w-2 h-2 bg-brand-sky rounded-full animate-pulse" />
-            Монтаж кондиционеров в Луганске
+        {/* Bottom wave */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
+          <svg viewBox="0 0 1440 96" className="absolute bottom-0 w-full" preserveAspectRatio="none">
+            <path d="M0,96 L0,40 Q360,0 720,48 Q1080,96 1440,32 L1440,96 Z" fill="white" />
+          </svg>
+        </div>
+
+        {/* Content — two columns */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 pt-24 pb-28 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          {/* Left — text */}
+          <div className={`transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full px-4 py-1.5 mb-8 text-white/90 text-sm font-medium">
+              <span className="w-2 h-2 bg-brand-sky rounded-full animate-pulse" />
+              Монтаж кондиционеров в Луганске
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 tracking-tight">
+              Установка<br />кондиционеров<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-sky to-white">
+                без пыли и грязи
+              </span>
+            </h1>
+
+            <p className="text-lg text-white/75 mb-8 max-w-lg font-medium leading-relaxed">
+              Профессиональное оборудование, широкий выбор моделей, гарантия на работу и бесплатная консультация.
+            </p>
+
+            {/* Stats row */}
+            <div className="flex items-center gap-6 mb-10">
+              {[["10+", "лет опыта"], ["500+", "клиентов"], ["1 день", "срок монтажа"]].map(([val, label]) => (
+                <div key={label} className="text-center">
+                  <div className="text-2xl font-black text-white">{val}</div>
+                  <div className="text-xs text-white/55 mt-0.5">{label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href={`tel:${PHONE_PRIMARY.replace(/\D/g, "")}`}
+                className="group flex items-center justify-center gap-3 bg-white text-brand-blue font-bold text-base px-7 py-4 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-200"
+              >
+                <Icon name="Phone" size={19} />
+                Позвонить сейчас
+              </a>
+              <a
+                href={TELEGRAM_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-white/15 backdrop-blur-sm border border-white/30 text-white font-bold text-base px-7 py-4 rounded-2xl hover:bg-white/25 hover:scale-105 transition-all duration-200"
+              >
+                <span className="text-xl">✈️</span>
+                Написать в Telegram
+              </a>
+            </div>
+
+            <div className="flex gap-4 mt-6 text-white/50 text-sm">
+              <span>{PHONE_PRIMARY}</span>
+              <span>·</span>
+              <span>{PHONE_SECONDARY}</span>
+            </div>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 tracking-tight">
-            Установка кондиционеров<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-sky to-white">
-              без пыли и грязи
-            </span>
-          </h1>
+          {/* Right — photo */}
+          <div className={`relative transition-all duration-1000 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
+            {/* Glow behind image */}
+            <div className="absolute inset-0 bg-brand-sky/20 rounded-3xl blur-2xl scale-95" />
 
-          <p className="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
-            Профессиональное оборудование, широкий выбор моделей, гарантия на работу и бесплатная консультация. Работаем только в Луганске.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href={`tel:${PHONE_PRIMARY.replace(/\D/g, "")}`}
-              className="group flex items-center gap-3 bg-white text-brand-blue font-bold text-lg px-8 py-4 rounded-2xl shadow-2xl hover:shadow-brand-sky/30 hover:scale-105 transition-all duration-200"
-            >
-              <Icon name="Phone" size={20} className="group-hover:animate-float" />
-              Позвонить сейчас
-            </a>
-            <a
-              href={TELEGRAM_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-white/15 backdrop-blur-sm border border-white/30 text-white font-bold text-lg px-8 py-4 rounded-2xl hover:bg-white/25 hover:scale-105 transition-all duration-200"
-            >
-              <span className="text-xl">✈️</span>
-              Telegram
-            </a>
+            {/* Photo card */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20">
+              <img
+                src="https://cdn.poehali.dev/projects/9db84ba1-b547-4fc5-ab96-54a895c6e708/files/b0572438-12f1-48f7-b52a-5ee2807ee135.jpg"
+                alt="Мастер устанавливает кондиционер"
+                className="w-full h-[420px] lg:h-[500px] object-cover"
+              />
+              {/* Overlay badge */}
+              <div className="absolute bottom-5 left-5 right-5">
+                <div className="bg-white/15 backdrop-blur-md border border-white/25 rounded-2xl px-5 py-4 flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-blue to-brand-sky flex items-center justify-center flex-shrink-0">
+                    <Icon name="Shield" size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-sm">Гарантия на монтаж</p>
+                    <p className="text-white/65 text-xs">Официальная гарантия на все работы</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mt-8 text-white/60 text-sm">
-            <span>{PHONE_PRIMARY}</span>
-            <span className="hidden sm:block">·</span>
-            <span>{PHONE_SECONDARY}</span>
-          </div>
         </div>
       </section>
 
