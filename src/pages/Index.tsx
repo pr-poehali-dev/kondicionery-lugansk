@@ -325,96 +325,112 @@ export default function Index() {
       {/* ── CONTACTS ── */}
       <section className="py-20 sm:py-28 bg-white px-4 sm:px-8" id="contacts">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="text-brand-sky font-semibold text-sm uppercase tracking-widest">Луганск</span>
-            <h2 className="text-3xl sm:text-5xl font-black text-brand-navy mt-2">
-              Контакты
-            </h2>
+
+          {/* Header */}
+          <div className="text-center mb-16">
+            <span className="text-brand-blue font-semibold text-sm uppercase tracking-widest">Луганск</span>
+            <h2 className="text-3xl sm:text-5xl font-black text-brand-navy mt-2">Свяжитесь с нами</h2>
+            <p className="text-slate-500 mt-4 text-base max-w-md mx-auto">Позвоните, напишите или посмотрите где мы работаем — ответим быстро</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="space-y-5">
-              <a
-                href={`tel:${PHONE_PRIMARY.replace(/\D/g, "")}`}
-                className="group flex items-center gap-5 bg-gradient-to-r from-brand-light to-white border border-blue-100 rounded-2xl p-6 hover:shadow-lg hover:shadow-blue-100/60 hover:-translate-y-1 transition-all duration-200"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-blue to-brand-sky flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
-                  <Icon name="Phone" size={22} className="text-white" />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-400 mb-1 font-medium uppercase tracking-wide">Основной телефон</p>
-                  <p className="text-xl font-bold text-brand-navy">{PHONE_PRIMARY}</p>
-                </div>
-              </a>
+          {/* Top row — phones + messengers */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
 
-              <a
-                href={`tel:${PHONE_SECONDARY.replace(/\D/g, "")}`}
-                className="group flex items-center gap-5 bg-gradient-to-r from-brand-light to-white border border-blue-100 rounded-2xl p-6 hover:shadow-lg hover:shadow-blue-100/60 hover:-translate-y-1 transition-all duration-200"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-blue to-brand-sky flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
-                  <Icon name="PhoneCall" size={22} className="text-white" />
+            {/* Phone 1 */}
+            <a href={`tel:${PHONE_PRIMARY.replace(/\D/g, "")}`}
+              className="group relative bg-gradient-to-br from-brand-navy to-brand-blue rounded-2xl p-6 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-200/50 transition-all duration-300"
+            >
+              <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -translate-y-8 translate-x-8" />
+              <div className="relative z-10">
+                <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Icon name="Phone" size={18} className="text-white" />
                 </div>
-                <div>
-                  <p className="text-xs text-slate-400 mb-1 font-medium uppercase tracking-wide">Дополнительный телефон</p>
-                  <p className="text-xl font-bold text-brand-navy">{PHONE_SECONDARY}</p>
-                </div>
-              </a>
+                <p className="text-white/55 text-xs font-medium uppercase tracking-wider mb-1">Основной</p>
+                <p className="text-white font-bold text-lg leading-tight">{PHONE_PRIMARY}</p>
+              </div>
+            </a>
 
-              <a
-                href={TELEGRAM_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-5 bg-gradient-to-r from-sky-50 to-white border border-sky-100 rounded-2xl p-6 hover:shadow-lg hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-200"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
-                  <span className="text-2xl">✈️</span>
+            {/* Phone 2 */}
+            <a href={`tel:${PHONE_SECONDARY.replace(/\D/g, "")}`}
+              className="group relative bg-gradient-to-br from-brand-blue to-brand-sky rounded-2xl p-6 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-200/50 transition-all duration-300"
+            >
+              <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -translate-y-8 translate-x-8" />
+              <div className="relative z-10">
+                <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Icon name="PhoneCall" size={18} className="text-white" />
                 </div>
-                <div>
-                  <p className="text-xs text-slate-400 mb-1 font-medium uppercase tracking-wide">Telegram</p>
-                  <p className="text-xl font-bold text-sky-700">Написать в Telegram</p>
-                </div>
-              </a>
+                <p className="text-white/55 text-xs font-medium uppercase tracking-wider mb-1">Дополнительный</p>
+                <p className="text-white font-bold text-lg leading-tight">{PHONE_SECONDARY}</p>
+              </div>
+            </a>
 
-              <a
-                href={MAX_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-5 bg-gradient-to-r from-violet-50 to-white border border-violet-100 rounded-2xl p-6 hover:shadow-lg hover:shadow-violet-100/60 hover:-translate-y-1 transition-all duration-200"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
-                  <span className="text-2xl font-black text-white text-sm">MAX</span>
+            {/* Telegram */}
+            <a href={TELEGRAM_LINK} target="_blank" rel="noopener noreferrer"
+              className="group relative bg-[#f0f8ff] border border-sky-100 rounded-2xl p-6 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-100/60 transition-all duration-300"
+            >
+              <div className="absolute top-0 right-0 w-20 h-20 bg-sky-100/50 rounded-full -translate-y-6 translate-x-6" />
+              <div className="relative z-10">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-md">
+                  <span className="text-lg leading-none">✈️</span>
                 </div>
-                <div>
-                  <p className="text-xs text-slate-400 mb-1 font-medium uppercase tracking-wide">MAX</p>
-                  <p className="text-xl font-bold text-violet-700">Написать в MAX</p>
-                </div>
-              </a>
+                <p className="text-slate-400 text-xs font-medium uppercase tracking-wider mb-1">Telegram</p>
+                <p className="text-sky-700 font-bold text-base">Написать</p>
+                <p className="text-slate-400 text-xs mt-0.5">Отвечаем быстро</p>
+              </div>
+            </a>
 
-              <div className="flex items-center gap-5 bg-gradient-to-r from-brand-light to-white border border-blue-100 rounded-2xl p-6">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-navy to-brand-blue flex items-center justify-center flex-shrink-0 shadow-md">
-                  <Icon name="MapPin" size={22} className="text-white" />
+            {/* MAX */}
+            <a href={MAX_LINK} target="_blank" rel="noopener noreferrer"
+              className="group relative bg-[#f7f0ff] border border-violet-100 rounded-2xl p-6 overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-violet-100/60 transition-all duration-300"
+            >
+              <div className="absolute top-0 right-0 w-20 h-20 bg-violet-100/50 rounded-full -translate-y-6 translate-x-6" />
+              <div className="relative z-10">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-md">
+                  <span className="text-white font-black text-xs">MAX</span>
                 </div>
-                <div>
-                  <p className="text-xs text-slate-400 mb-1 font-medium uppercase tracking-wide">Город</p>
-                  <p className="text-base font-semibold text-brand-navy">{ADDRESS}</p>
-                  <p className="text-sm text-slate-400 mt-0.5">Работаем по всему городу</p>
+                <p className="text-slate-400 text-xs font-medium uppercase tracking-wider mb-1">MAX</p>
+                <p className="text-violet-700 font-bold text-base">Написать</p>
+                <p className="text-slate-400 text-xs mt-0.5">Отвечаем быстро</p>
+              </div>
+            </a>
+          </div>
+
+          {/* Bottom row — address + map */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
+
+            {/* Address card */}
+            <div className="lg:col-span-2 bg-[#f4f8ff] border border-blue-50 rounded-2xl p-8 flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-navy to-brand-blue flex items-center justify-center mb-5 shadow-md">
+                  <Icon name="MapPin" size={18} className="text-white" />
                 </div>
+                <p className="text-slate-400 text-xs font-medium uppercase tracking-wider mb-2">Где работаем</p>
+                <p className="text-brand-navy font-black text-2xl mb-1">{ADDRESS}</p>
+                <p className="text-slate-500 text-sm leading-relaxed mt-3">
+                  Выезжаем по всему городу и пригороду. Время выезда согласовываем при звонке.
+                </p>
+              </div>
+              <div className="mt-8 flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-blue-100 w-fit">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                <span className="text-sm font-semibold text-brand-navy">Принимаем заявки сейчас</span>
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-blue-100 min-h-[420px] relative bg-brand-light">
+            {/* Map */}
+            <div className="lg:col-span-3 rounded-2xl overflow-hidden shadow-lg border border-blue-100 min-h-[320px] relative bg-brand-light">
               <iframe
                 src="https://yandex.ru/map-widget/v1/?ll=39.338788%2C48.570763&z=13&l=map"
                 width="100%"
                 height="100%"
                 className="absolute inset-0 w-full h-full"
-                style={{ minHeight: 420 }}
+                style={{ minHeight: 320 }}
                 frameBorder="0"
                 allowFullScreen
                 title="Луганск на карте"
               />
             </div>
           </div>
+
         </div>
       </section>
 
