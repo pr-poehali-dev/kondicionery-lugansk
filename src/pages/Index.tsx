@@ -3,30 +3,30 @@ import Icon from "@/components/ui/icon";
 
 const PHONE_PRIMARY = "+7 (999) 123-45-67";
 const PHONE_SECONDARY = "+7 (999) 765-43-21";
-const WHATSAPP_LINK = "https://wa.me/79991234567";
 const TELEGRAM_LINK = "https://t.me/username";
-const ADDRESS = "г. Москва, ул. Примерная, д. 1, офис 101";
+const MAX_LINK = "https://max.ru/username";
+const ADDRESS = "г. Луганск";
 
 const advantages = [
   {
-    icon: "Shield",
-    title: "Надёжность",
-    desc: "Работаем на рынке более 10 лет. Гарантируем качество и выполняем все обязательства в срок.",
+    icon: "Wind",
+    title: "Без пыли и грязи",
+    desc: "Работаем профессиональным оборудованием — после монтажа убираем за собой полностью. Ваш интерьер не пострадает.",
   },
   {
     icon: "Zap",
-    title: "Быстро",
-    desc: "Оперативный выезд и выполнение работ. Ценим ваше время — результат в кратчайшие сроки.",
-  },
-  {
-    icon: "Users",
-    title: "Опытная команда",
-    desc: "Профессионалы с многолетним стажем. Каждый сотрудник — сертифицированный специалист.",
+    title: "Выезд в день звонка",
+    desc: "Быстро реагируем на заявки по всему Луганску. Специалист приедет в удобное для вас время.",
   },
   {
     icon: "BadgeCheck",
-    title: "Гарантия",
-    desc: "Официальная гарантия на все виды работ и используемые материалы. Работаем честно.",
+    title: "Гарантия на работу",
+    desc: "Официальная гарантия на монтаж и оборудование. Если что-то пойдёт не так — устраним бесплатно.",
+  },
+  {
+    icon: "Headphones",
+    title: "Бесплатная консультация",
+    desc: "Поможем выбрать оптимальную модель под вашу площадь и бюджет. Без навязывания лишнего.",
   },
 ];
 
@@ -55,10 +55,10 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-blue to-brand-sky flex items-center justify-center shadow-lg">
-              <Icon name="Star" size={18} className="text-white" />
+              <Icon name="Wind" size={18} className="text-white" />
             </div>
             <span className={`text-xl font-bold tracking-tight transition-colors duration-300 ${scrolled ? "text-brand-navy" : "text-white"}`}>
-              КомпанияПро
+              КлиматЛуганск
             </span>
           </div>
 
@@ -113,18 +113,18 @@ export default function Index() {
         <div className={`relative z-10 text-center px-4 sm:px-8 max-w-5xl mx-auto transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 rounded-full px-4 py-1.5 mb-8 text-white/90 text-sm font-medium">
             <span className="w-2 h-2 bg-brand-sky rounded-full animate-pulse" />
-            Более 10 лет на рынке
+            Монтаж кондиционеров в Луганске
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 tracking-tight">
-            Профессиональные<br />
+            Установка кондиционеров<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-sky to-white">
-              услуги для вас
+              без пыли и грязи
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-white/75 mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
-            Быстро, качественно, с гарантией. Работаем по всему городу — выезжаем в день обращения.
+          <p className="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
+            Профессиональное оборудование, широкий выбор моделей, гарантия на работу и бесплатная консультация. Работаем только в Луганске.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -136,13 +136,13 @@ export default function Index() {
               Позвонить сейчас
             </a>
             <a
-              href={WHATSAPP_LINK}
+              href={TELEGRAM_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 bg-white/15 backdrop-blur-sm border border-white/30 text-white font-bold text-lg px-8 py-4 rounded-2xl hover:bg-white/25 hover:scale-105 transition-all duration-200"
             >
-              <span className="text-xl">💬</span>
-              WhatsApp
+              <span className="text-xl">✈️</span>
+              Telegram
             </a>
           </div>
 
@@ -158,7 +158,7 @@ export default function Index() {
       <section className="py-20 sm:py-28 bg-white px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <span className="text-brand-sky font-semibold text-sm uppercase tracking-widest">Почему мы</span>
+            <span className="text-brand-sky font-semibold text-sm uppercase tracking-widest">Почему выбирают нас</span>
             <h2 className="text-3xl sm:text-5xl font-black text-brand-navy mt-2">
               Наши преимущества
             </h2>
@@ -198,23 +198,23 @@ export default function Index() {
 
           <div className="max-w-4xl mx-auto space-y-6">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-white">
-              <h3 className="text-xl font-bold mb-3 text-brand-sky">Основное направление</h3>
+              <h3 className="text-xl font-bold mb-3 text-brand-sky">Профессиональный монтаж</h3>
               <p className="text-white/85 leading-relaxed text-base">
-                Мы предоставляем полный спектр профессиональных услуг в нашей сфере. Наша команда опытных специалистов готова решить задачи любой сложности — от простых заявок до комплексных проектов. Работаем с частными клиентами и организациями по всему городу, обеспечивая высокое качество на каждом этапе.
+                Устанавливаем кондиционеры любых марок и мощностей с использованием профессионального оборудования. Работаем аккуратно — без пыли, грязи и лишнего шума. После монтажа проводим уборку и сдаём объект в идеальном состоянии. Подходим для квартир, домов, офисов и торговых помещений.
               </p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-white">
-              <h3 className="text-xl font-bold mb-3 text-brand-sky">Как мы работаем</h3>
+              <h3 className="text-xl font-bold mb-3 text-brand-sky">Широкий выбор моделей</h3>
               <p className="text-white/85 leading-relaxed text-base">
-                Принцип работы прост: вы звоните или пишете в WhatsApp, мы консультируем и согласовываем детали, специалист выезжает в удобное для вас время. Никаких скрытых платежей — только честная стоимость, озвученная заранее. Все работы выполняются строго по договору с официальной гарантией.
+                Помогаем подобрать оптимальный кондиционер под вашу площадь, бюджет и задачи. В нашем ассортименте — проверенные модели от ведущих производителей: инверторные, мультисплит-системы, настенные и кассетные. Бесплатно проконсультируем по телефону или на выезде — без навязывания лишнего.
               </p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-white">
-              <h3 className="text-xl font-bold mb-3 text-brand-sky">Результат</h3>
+              <h3 className="text-xl font-bold mb-3 text-brand-sky">Гарантия и сервис</h3>
               <p className="text-white/85 leading-relaxed text-base">
-                После выполнения работ мы проводим финальную проверку и сдаём объект. Если в гарантийный период возникают вопросы — наша служба поддержки работает без выходных. Более 500 довольных клиентов уже рекомендуют нас своим знакомым — присоединяйтесь!
+                Даём официальную гарантию на все виды монтажных работ и установленное оборудование. Работаем только в Луганске — быстро приедем на повторный вызов, если понадобится. Наша цель — чтобы кондиционер работал исправно долгие годы, а вы оставались нашим постоянным клиентом.
               </p>
             </div>
           </div>
@@ -225,7 +225,7 @@ export default function Index() {
       <section className="py-20 sm:py-28 bg-white px-4 sm:px-8" id="contacts">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <span className="text-brand-sky font-semibold text-sm uppercase tracking-widest">Связь</span>
+            <span className="text-brand-sky font-semibold text-sm uppercase tracking-widest">Луганск</span>
             <h2 className="text-3xl sm:text-5xl font-black text-brand-navy mt-2">
               Контакты
             </h2>
@@ -260,21 +260,6 @@ export default function Index() {
               </a>
 
               <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-5 bg-gradient-to-r from-green-50 to-white border border-green-100 rounded-2xl p-6 hover:shadow-lg hover:shadow-green-100/60 hover:-translate-y-1 transition-all duration-200"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
-                  <span className="text-2xl">💬</span>
-                </div>
-                <div>
-                  <p className="text-xs text-slate-400 mb-1 font-medium uppercase tracking-wide">WhatsApp</p>
-                  <p className="text-xl font-bold text-green-700">Написать в WhatsApp</p>
-                </div>
-              </a>
-
-              <a
                 href={TELEGRAM_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -289,27 +274,43 @@ export default function Index() {
                 </div>
               </a>
 
+              <a
+                href={MAX_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-5 bg-gradient-to-r from-violet-50 to-white border border-violet-100 rounded-2xl p-6 hover:shadow-lg hover:shadow-violet-100/60 hover:-translate-y-1 transition-all duration-200"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
+                  <span className="text-2xl font-black text-white text-sm">MAX</span>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400 mb-1 font-medium uppercase tracking-wide">MAX</p>
+                  <p className="text-xl font-bold text-violet-700">Написать в MAX</p>
+                </div>
+              </a>
+
               <div className="flex items-center gap-5 bg-gradient-to-r from-brand-light to-white border border-blue-100 rounded-2xl p-6">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-navy to-brand-blue flex items-center justify-center flex-shrink-0 shadow-md">
                   <Icon name="MapPin" size={22} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-xs text-slate-400 mb-1 font-medium uppercase tracking-wide">Адрес</p>
+                  <p className="text-xs text-slate-400 mb-1 font-medium uppercase tracking-wide">Город</p>
                   <p className="text-base font-semibold text-brand-navy">{ADDRESS}</p>
+                  <p className="text-sm text-slate-400 mt-0.5">Работаем по всему городу</p>
                 </div>
               </div>
             </div>
 
             <div className="rounded-2xl overflow-hidden shadow-xl border border-blue-100 min-h-[420px] relative bg-brand-light">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=37.617635%2C55.755814&z=14&l=map"
+                src="https://yandex.ru/map-widget/v1/?ll=39.338788%2C48.570763&z=13&l=map"
                 width="100%"
                 height="100%"
                 className="absolute inset-0 w-full h-full"
                 style={{ minHeight: 420 }}
                 frameBorder="0"
                 allowFullScreen
-                title="Карта"
+                title="Луганск на карте"
               />
             </div>
           </div>
@@ -322,9 +323,9 @@ export default function Index() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-brand-blue to-brand-sky flex items-center justify-center">
-                <Icon name="Star" size={16} className="text-white" />
+                <Icon name="Wind" size={16} className="text-white" />
               </div>
-              <span className="text-white font-bold text-lg">КомпанияПро</span>
+              <span className="text-white font-bold text-lg">КлиматЛуганск</span>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 text-white/70 text-sm">
@@ -340,7 +341,7 @@ export default function Index() {
             </div>
 
             <p className="text-white/40 text-sm">
-              © {new Date().getFullYear()} КомпанияПро. Все права защищены.
+              © {new Date().getFullYear()} КлиматЛуганск. Все права защищены.
             </p>
           </div>
         </div>
