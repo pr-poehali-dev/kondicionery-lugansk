@@ -183,40 +183,96 @@ export default function Index() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className="py-20 sm:py-28 bg-gradient-to-br from-brand-navy via-brand-blue to-brand-sky px-4 sm:px-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
-          <div className="w-full h-full bg-gradient-to-bl from-white to-transparent" />
-        </div>
+      <section className="py-20 sm:py-28 bg-[#f4f8ff] px-4 sm:px-8 relative overflow-hidden">
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-brand-sky/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-brand-blue/8 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-14">
-            <span className="text-brand-sky font-semibold text-sm uppercase tracking-widest">Что мы делаем</span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white mt-2">
+          <div className="text-center mb-16">
+            <span className="text-brand-blue font-semibold text-sm uppercase tracking-widest">Что мы делаем</span>
+            <h2 className="text-3xl sm:text-5xl font-black text-brand-navy mt-2">
               Наши услуги
             </h2>
+            <p className="text-slate-500 mt-4 text-base max-w-xl mx-auto">
+              Всё необходимое для комфортного климата в вашем доме или офисе
+            </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-white">
-              <h3 className="text-xl font-bold mb-3 text-brand-sky">Профессиональный монтаж</h3>
-              <p className="text-white/85 leading-relaxed text-base">
-                Устанавливаем кондиционеры любых марок и мощностей с использованием профессионального оборудования. Работаем аккуратно — без пыли, грязи и лишнего шума. После монтажа проводим уборку и сдаём объект в идеальном состоянии. Подходим для квартир, домов, офисов и торговых помещений.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            {/* Card 1 */}
+            <div className="group bg-white rounded-3xl p-8 shadow-sm border border-blue-50 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-blue to-brand-sky flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                <Icon name="Wrench" size={22} className="text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-navy mb-4">Профессиональный монтаж</h3>
+              <ul className="space-y-2.5">
+                {["Любые марки и мощности", "Без пыли и грязи — чистим за собой", "Квартиры, дома, офисы, магазины", "Профессиональное оборудование"].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
+                    <span className="mt-0.5 w-5 h-5 rounded-full bg-brand-light flex items-center justify-center flex-shrink-0">
+                      <Icon name="Check" size={12} className="text-brand-blue" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-white">
-              <h3 className="text-xl font-bold mb-3 text-brand-sky">Широкий выбор моделей</h3>
-              <p className="text-white/85 leading-relaxed text-base">
-                Помогаем подобрать оптимальный кондиционер под вашу площадь, бюджет и задачи. В нашем ассортименте — проверенные модели от ведущих производителей: инверторные, мультисплит-системы, настенные и кассетные. Бесплатно проконсультируем по телефону или на выезде — без навязывания лишнего.
-              </p>
+            {/* Card 2 — featured */}
+            <div className="group relative bg-gradient-to-br from-brand-navy to-brand-blue rounded-3xl p-8 shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-10 translate-x-10" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-brand-sky/10 rounded-full translate-y-10 -translate-x-10" />
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Icon name="Layers" size={22} className="text-white" />
+                </div>
+                <div className="inline-block bg-brand-sky/30 text-brand-sky text-xs font-semibold px-3 py-1 rounded-full mb-3">Популярно</div>
+                <h3 className="text-xl font-bold text-white mb-4">Широкий выбор моделей</h3>
+                <ul className="space-y-2.5">
+                  {["Инверторные сплит-системы", "Мультисплит для нескольких комнат", "Настенные и кассетные модели", "Подбор под площадь и бюджет"].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-white/80">
+                      <span className="mt-0.5 w-5 h-5 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0">
+                        <Icon name="Check" size={12} className="text-brand-sky" />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-white">
-              <h3 className="text-xl font-bold mb-3 text-brand-sky">Гарантия и сервис</h3>
-              <p className="text-white/85 leading-relaxed text-base">
-                Даём официальную гарантию на все виды монтажных работ и установленное оборудование. Работаем только в Луганске — быстро приедем на повторный вызов, если понадобится. Наша цель — чтобы кондиционер работал исправно долгие годы, а вы оставались нашим постоянным клиентом.
-              </p>
+            {/* Card 3 */}
+            <div className="group bg-white rounded-3xl p-8 shadow-sm border border-blue-50 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-blue to-brand-sky flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                <Icon name="BadgeCheck" size={22} className="text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-navy mb-4">Гарантия и сервис</h3>
+              <ul className="space-y-2.5">
+                {["Официальная гарантия на монтаж", "Гарантия на оборудование", "Бесплатная консультация", "Работаем только в Луганске"].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
+                    <span className="mt-0.5 w-5 h-5 rounded-full bg-brand-light flex items-center justify-center flex-shrink-0">
+                      <Icon name="Check" size={12} className="text-brand-blue" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
+
+          </div>
+
+          {/* CTA strip */}
+          <div className="mt-10 bg-white border border-blue-100 rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+            <p className="text-brand-navy font-semibold text-lg text-center sm:text-left">
+              Не знаете, какой кондиционер выбрать? Позвоните — подберём бесплатно.
+            </p>
+            <a
+              href={`tel:${PHONE_PRIMARY.replace(/\D/g, "")}`}
+              className="flex-shrink-0 flex items-center gap-2 bg-gradient-to-r from-brand-blue to-brand-sky text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-transform shadow-md"
+            >
+              <Icon name="Phone" size={17} />
+              {PHONE_PRIMARY}
+            </a>
           </div>
         </div>
       </section>
