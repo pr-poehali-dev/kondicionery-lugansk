@@ -177,7 +177,7 @@ export default function Index() {
             {/* Photo card */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20">
               <img
-                src="https://cdn.poehali.dev/projects/9db84ba1-b547-4fc5-ab96-54a895c6e708/files/b0572438-12f1-48f7-b52a-5ee2807ee135.jpg"
+                src="https://cdn.poehali.dev/projects/9db84ba1-b547-4fc5-ab96-54a895c6e708/files/ac68129e-5d71-4091-be23-9248813741e0.jpg"
                 alt="Мастер устанавливает кондиционер"
                 className="w-full h-[420px] lg:h-[500px] object-cover"
               />
