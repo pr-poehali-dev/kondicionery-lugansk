@@ -179,7 +179,7 @@ export default function Index() {
             {/* Photo card */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20">
               <img
-                src="https://cdn.poehali.dev/projects/9db84ba1-b547-4fc5-ab96-54a895c6e708/files/ac68129e-5d71-4091-be23-9248813741e0.jpg"
+                src="https://cdn.poehali.dev/projects/9db84ba1-b547-4fc5-ab96-54a895c6e708/files/1cc2df77-03ed-4475-ae61-61c5cbc113ed.jpg"
                 alt="Мастер устанавливает кондиционер в Луганске"
                 className="w-full h-[340px] sm:h-[420px] lg:h-[500px] object-cover"
                 loading="eager"
